@@ -24,51 +24,51 @@ int registro()//Função para registrar os nomes dos usuários
 		fprintf(file, cpf); // salvo o valor da variável 
 		fclose(file); //fecha o arquivo
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, ",");
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, ",");//escrevendo a virgula
+		fclose(file);//fecha o arquivo
 		
-		printf("Digite o nome a ser cadrastrado: ");
-		scanf("%s", nome);
+		printf("Digite o nome a ser cadrastrado: ");//pede pro usuário digitar o nome
+		scanf("%s", nome);// salvando a informação do usuário
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, nome);
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, nome);//salva o valor da variável
+		fclose(file);//fecha o arquivo
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, ",");
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, ",");//escrevendo o arquivo
+		fclose(file);//fecha o arquivo
 		
-		printf("Digite o sobrenome a ser cadastrado: ");
-		scanf("%s", sobrenome);
+		printf("Digite o sobrenome a ser cadastrado: ");//pede pro usuário digitar o sobrenome
+		scanf("%s", sobrenome);//salva a informação do usuário
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, sobrenome);
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, sobrenome);//salva o valor da variavel
+		fclose(file);//fecha o arquivo
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, ",");
-		fclose(file);	
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é de para adicionar
+		fprintf(file, ",");//escrevendo a virgula
+		fclose(file);//fecha o arquivo
 		
-		printf("Digite o cargo a ser cadastrado: ");
-		scanf("%s", cargo);
+		printf("Digite o cargo a ser cadastrado: ");//pede pro usuário digitar o cargo
+		scanf("%s", cargo);//salva a informação do usuário
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, cargo);
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, cargo);//salva o valor da variavel
+		fclose(file);//fecha o arquivo
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, ",");
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, ",");//escrevedno a virgula
+		fclose(file);//fecha o arquivo
 		
-		printf("Digite o telefone a ser cadastrado: ");
-		scanf("%s", telefone);
+		printf("Digite o telefone a ser cadastrado: ");//Pede pro usuário digitar o telefone
+		scanf("%s", telefone);//armazade a informação do usuário
 		
-		file = fopen(arquivo, "a");
-		fprintf(file, telefone);
-		fclose(file);
+		file = fopen(arquivo, "a");//abrindo o arquivo e o "a" é para adicionar
+		fprintf(file, telefone);//salva o valor na variavel
+		fclose(file);//fecha o arquivo
 		
-		system("pause");
+		system("pause");//pause o sistema para o usuário
 		
 	}
 
@@ -87,39 +87,39 @@ int consultar()//Função para consulta os nomes
 		FILE *file; //Consulta na biblioteca FILE a função file
 		file = fopen(cpf, "r");// Abre o arquivo file e pede para ler o mesmo
 		
-		if(file == NULL)
+		if(file == NULL)//caso o arquivo for nulo/não encontrado
 		{
-			printf("Não foi possível localizar o arquivo consultado!\n");
+			printf("Não foi possível localizar o arquivo consultado!\n");//mostra para o usuário que o arquivo não foi encontrado.
 			
 		}
 		
 		while(fgets(conteudo, 200, file) != NULL)
 		{
-			printf("\nEssas são as informações do usuário: \n");
-			printf("%s", conteudo);
+			printf("\nEssas são as informações do usuário: \n");//pede para o usuário digitar a informação
+			printf("%s", conteudo);//armazana a informação digitada
 			printf("\n\n");
 		}
 		
-		system("pause");
+		system("pause");//pausa o sistema
 	
 	}
 
 int deletar()//Função para deletar os nomes
 	{	
-		char cpf[40];
+		char cpf[40];//criação da variável/string
 		
-		printf("Digite o CPF do usuário a ser deletado: ");
-		scanf("%s", cpf);
+		printf("Digite o CPF do usuário a ser deletado: ");//pede para o usuário digitar a informação/CPF
+		scanf("%s", cpf);//armazena a irfomação digitada pelo o usuário
 		
-		remove(cpf);
+		remove(cpf);//remove o arquivo que o usuário digitou
 		
-		FILE *file;
-		file = fopen(cpf,"r");
+		FILE *file;//consulta na biblioteca FILE a função file
+		file = fopen(cpf,"r");//abre o arquivo e o "r" é para ler o arquivo
 		
-		if(file == NULL)
+		if(file == NULL)//caso o arquivo não exista
 		{
-			printf("O usuário não foi encontrado no sistema!\n");
-			system("pause");
+			printf("O usuário não foi encontrado no sistema!\n");//mostra para o usuário que o arquivo não foi encontrado/excluído
+			system("pause");//pause o sistema
 		}
 			
 		
@@ -166,7 +166,7 @@ int main()//Função main/principal e criação do menu
 			
 			case 4:
 			printf("Obrigado por utilizar o sistema!\n");
-			return 0;
+			return 0; // quebra laço, quebra a função e sai do sistema
 			break;
 			
 			default:
